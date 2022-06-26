@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <table>
+        <tr>
+            <td>First Number</td>
+            <td><input type="text" id="num1" maxlength="10"></td>
+        </tr>
+        <tr>
+            <td>Operator</td>
+            <td><input type="text" id="opera" maxlength="1"></td>
+        </tr>
+        <tr>
+            <td>Second Number</td>
+            <td><input type="text" id="num2" maxlength="10"></td>
+        </tr>
+    </table>
+    <button onclick="calc()">Calculate</button>
+    <table>
+        <tr>
+            <td>Result</td>
+            <td><input type="text" id="result" maxlength="10"></td>
+        </tr>
+    </table>
+    <script>
+        function calc(){
+            var num1 = parseFloat(document.querySelector("#num1").value);
+            var num2 = parseFloat(document.querySelector("#num2").value);
+            var opera = document.querySelector("#opera").value;
+            if(opera == "+"){
+                document.querySelector("#result").value = num1+num2;
+            }
+            else if(opera == "-"){
+                document.querySelector("#result").value = num1-num2;
+            }
+            else if(opera == "/"){
+                document.querySelector("#result").value = num1/num2;
+            }
+            else if(opera == "*"){
+                document.querySelector("#result").value = num1*num2;
+            }
+            else{
+                alert("Entered operator is invalid");          
+            }
+        };
+    </script>
+</body>
+</html>
